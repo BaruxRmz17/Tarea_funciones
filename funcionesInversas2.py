@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 x,y = sp.symbols('x,y')
 
 #Definir la funcion original
-f = x**3 + 2*x + 1
+f = x**3 + 2
 
 #Calculamos la inversa de la funcion 
 f_inv = sp.solve(f - y,x)
@@ -20,7 +20,7 @@ f_lambdified = sp.lambdify(x,f, 'numpy')
 f_inv_lambdified = sp.lambdify(y, f_inv[0], 'numpy')
 
 #Rango de valores a graficar.
-x_vals = np.linspace(-10,10,20)
+x_vals = np.linspace(-3,3,20)
 y_vals = f_lambdified(x_vals)
 y_inv_vals = f_inv_lambdified(x_vals)
 
